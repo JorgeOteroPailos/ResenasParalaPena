@@ -1,0 +1,185 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d9a8f0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #a1d699;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+button {
+  background-color: white;
+  border: 2px solid #a1d699;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+main {
+  padding: 20px;
+}
+.section {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+.map-container {
+  text-align: center;
+  margin: 20px auto;
+}
+iframe {
+  width: 80%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+.faq {
+  background-color: #a1d699;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  cursor: pointer;
+}
+footer {
+  background-color: #e08a1e;
+  padding: 20px;
+  color: white;
+  font-size: 14px;
+}
+.view-all {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #e08a1e;
+  font-weight: bold;
+}
+
+/* Carrusel de Reseñas - CSS puro */
+.carousel-reviews {
+  position: relative;
+}
+/* Ocultamos los inputs */
+.carousel-reviews input {
+  display: none;
+}
+.reviews-container {
+  overflow: hidden;
+  width: 80%;
+  margin: auto;
+}
+.reviews-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+.review {
+  background-color: #e08a1e;
+  color: white;
+  padding: 20px;
+  min-width: 30%;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+/* Desplazamiento según input marcado */
+#reviewSlide1:checked ~ .reviews-container .reviews-wrapper {
+  transform: translateX(0);
+}
+#reviewSlide2:checked ~ .reviews-container .reviews-wrapper {
+  transform: translateX(-33%);
+}
+#reviewSlide3:checked ~ .reviews-container .reviews-wrapper {
+  transform: translateX(-66%);
+}
+/* Flechas de navegación: ocultas por defecto */
+.reviews-navigation .nav-arrow {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #a1d699;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+/* Mostramos las flechas según el input seleccionado */
+#reviewSlide1:checked ~ .reviews-navigation .arrow-reviews-1,
+#reviewSlide2:checked ~ .reviews-navigation .arrow-reviews-2,
+#reviewSlide3:checked ~ .reviews-navigation .arrow-reviews-3 {
+  display: inline-block;
+}
+
+/* Carrusel de Consejos - CSS puro */
+.carousel-tips {
+  position: relative;
+  margin-top: 20px;
+}
+.carousel-tips input {
+  display: none;
+}
+.tips-container {
+  overflow: hidden;
+  width: 80%;
+  margin: auto;
+}
+.tips-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+.tip {
+  background-color: #e08a1e;
+  color: white;
+  padding: 20px;
+  min-width: 30%;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+/* Desplazamiento según input marcado para consejos */
+#tipSlide1:checked ~ .tips-container .tips-wrapper {
+  transform: translateX(0);
+}
+#tipSlide2:checked ~ .tips-container .tips-wrapper {
+  transform: translateX(-33%);
+}
+#tipSlide3:checked ~ .tips-container .tips-wrapper {
+  transform: translateX(-66%);
+}
+/* Flechas de navegación para consejos */
+.tips-navigation .nav-arrow {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #a1d699;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+#tipSlide1:checked ~ .tips-navigation .arrow-tips-1,
+#tipSlide2:checked ~ .tips-navigation .arrow-tips-2,
+#tipSlide3:checked ~ .tips-navigation .arrow-tips-3 {
+  display: inline-block;
+}
