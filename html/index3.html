@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reseñasparalapeña</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #d9a8f0;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #a1d699;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    button {
+      background-color: white;
+      border: 2px solid #a1d699;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    main {
+      padding: 20px;
+    }
+    .section {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      margin: 10px 0;
+    }
+    .map-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+    iframe {
+      width: 80%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+    .faq {
+      background-color: #a1d699;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #e08a1e;
+      padding: 20px;
+      color: white;
+      font-size: 14px;
+    }
+    .view-all {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #e08a1e;
+      font-weight: bold;
+    }
+    
+    /* Carrusel de Reseñas - CSS puro */
+    .carousel-reviews {
+      position: relative;
+    }
+    /* Ocultamos los inputs */
+    .carousel-reviews input {
+      display: none;
+    }
+    .reviews-container {
+      overflow: hidden;
+      width: 80%;
+      margin: auto;
+    }
+    .reviews-wrapper {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+    .review {
+      background-color: #e08a1e;
+      color: white;
+      padding: 20px;
+      min-width: 30%;
+      margin: 5px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    /* Desplazamiento según input marcado */
+    #reviewSlide1:checked ~ .reviews-container .reviews-wrapper {
+      transform: translateX(0);
+    }
+    #reviewSlide2:checked ~ .reviews-container .reviews-wrapper {
+      transform: translateX(-33%);
+    }
+    #reviewSlide3:checked ~ .reviews-container .reviews-wrapper {
+      transform: translateX(-66%);
+    }
+    /* Flechas de navegación: ocultas por defecto */
+    .reviews-navigation .nav-arrow {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #a1d699;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+    /* Mostramos las flechas según el input seleccionado */
+    #reviewSlide1:checked ~ .reviews-navigation .arrow-reviews-1,
+    #reviewSlide2:checked ~ .reviews-navigation .arrow-reviews-2,
+    #reviewSlide3:checked ~ .reviews-navigation .arrow-reviews-3 {
+      display: inline-block;
+    }
+    
+    /* Carrusel de Consejos - CSS puro */
+    .carousel-tips {
+      position: relative;
+      margin-top: 20px;
+    }
+    .carousel-tips input {
+      display: none;
+    }
+    .tips-container {
+      overflow: hidden;
+      width: 80%;
+      margin: auto;
+    }
+    .tips-wrapper {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+    .tip {
+      background-color: #e08a1e;
+      color: white;
+      padding: 20px;
+      min-width: 30%;
+      margin: 5px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    /* Desplazamiento según input marcado para consejos */
+    #tipSlide1:checked ~ .tips-container .tips-wrapper {
+      transform: translateX(0);
+    }
+    #tipSlide2:checked ~ .tips-container .tips-wrapper {
+      transform: translateX(-33%);
+    }
+    #tipSlide3:checked ~ .tips-container .tips-wrapper {
+      transform: translateX(-66%);
+    }
+    /* Flechas de navegación para consejos */
+    .tips-navigation .nav-arrow {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #a1d699;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+    #tipSlide1:checked ~ .tips-navigation .arrow-tips-1,
+    #tipSlide2:checked ~ .tips-navigation .arrow-tips-2,
+    #tipSlide3:checked ~ .tips-navigation .arrow-tips-3 {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <span>Reseñas para la Peña</span>
+      <button>Iniciar sesión</button>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Sección de opciones principales -->
+    <section class="section">
+      <h2>Busca una opinión</h2>
+      <h2>Escribe una opinión</h2>
+      <h2>Busca una inmobiliaria</h2>
+    </section>
+    
+    <!-- Sección de últimas reseñas con carrusel CSS -->
+    <section class="section carousel-reviews">
+      <h2>Mira las últimas reseñas</h2>
+      <!-- Inputs para controlar el carrusel de reseñas -->
+      <input type="radio" name="carouselReviews" id="reviewSlide1" checked>
+      <input type="radio" name="carouselReviews" id="reviewSlide2">
+      <input type="radio" name="carouselReviews" id="reviewSlide3">
+      
+      <div class="reviews-container">
+        <div class="reviews-wrapper">
+          <div class="review">Dirección<br>Reseña 1</div>
+          <div class="review">Dirección<br>Reseña 2</div>
+          <div class="review">Dirección<br>Reseña 3</div>
+          <div class="review">Dirección<br>Reseña 4</div>
+          <div class="review">Dirección<br>Reseña 5</div>
+        </div>
+      </div>
+      <div class="reviews-navigation">
+        <!-- Flechas: para el primer slide solo se muestra "siguiente" -->
+        <label for="reviewSlide2" class="nav-arrow arrow-reviews-1">&#8594;</label>
+        <!-- Para el segundo slide se muestran ambas -->
+        <label for="reviewSlide1" class="nav-arrow arrow-reviews-2">&#8592;</label>
+        <label for="reviewSlide3" class="nav-arrow arrow-reviews-2">&#8594;</label>
+        <!-- Para el tercer slide, solo se muestra "anterior" -->
+        <label for="reviewSlide2" class="nav-arrow arrow-reviews-3">&#8592;</label>
+      </div>
+      <a href="todas-las-resenas.html" class="view-all">Ver Todas</a>
+    </section>
+    
+    <!-- Sección del mapa -->
+    <section class="map-container">
+      <h2>O mira nuestro mapa</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31206.68472726494!2d-8.545824155419947!3d42.88044705964202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e4f5864535a9b%3A0x24a39868f3e7e5d8!2sSantiago%20de%20Compostela!5e0!3m2!1ses!2ses!4v1649747080585!5m2!1ses!2ses" allowfullscreen></iframe>
+    </section>
+    
+    <!-- Sección de consejos con carrusel CSS -->
+    <section class="section carousel-tips">
+      <h2>Consejos</h2>
+      <!-- Inputs para controlar el carrusel de consejos -->
+      <input type="radio" name="carouselTips" id="tipSlide1" checked>
+      <input type="radio" name="carouselTips" id="tipSlide2">
+      <input type="radio" name="carouselTips" id="tipSlide3">
+      
+      <div class="tips-container">
+        <div class="tips-wrapper">
+          <div class="tip">Consejo 1: ¡Mantén la calma!</div>
+          <div class="tip">Consejo 2: Organiza tus ideas.</div>
+          <div class="tip">Consejo 3: Sé puntual.</div>
+          <div class="tip">Consejo 4: Comunica con claridad.</div>
+          <div class="tip">Consejo 5: Aprende de los errores.</div>
+        </div>
+      </div>
+      <div class="tips-navigation">
+        <!-- Flechas para el carrusel de consejos -->
+        <label for="tipSlide2" class="nav-arrow arrow-tips-1">&#8594;</label>
+        <label for="tipSlide1" class="nav-arrow arrow-tips-2">&#8592;</label>
+        <label for="tipSlide3" class="nav-arrow arrow-tips-2">&#8594;</label>
+        <label for="tipSlide2" class="nav-arrow arrow-tips-3">&#8592;</label>
+      </div>
+      <a href="todos-los-consejos.html" class="view-all">Ver Todos</a>
+    </section>
+    
+    <!-- Sección de preguntas frecuentes -->
+    <section class="section">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">¿Qué es reseñasparalapeña?</div>
+      <div class="faq">¿Por qué dejar una opinión?</div>
+      <div class="faq">¿Son anónimas mis opiniones?</div>
+      <div class="faq">¿Mi casero verá mi review?</div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>Sobre nosotros | Cookies | Contacto | Empresa | Recursos | Consejos</p>
+    <p>Política de privacidad | Términos y condiciones | Buenas prácticas | Redes sociales | Socios</p>
+  </footer>
+</body>
+</html>
