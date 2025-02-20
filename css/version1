@@ -1,150 +1,95 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <!-- Definición de la codificación de caracteres y la configuración de la vista en dispositivos móviles -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reseñasparalapeña</title>
-    
-    <style>
-        /* Estilos generales del cuerpo */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #d9a8f0; /* Color de fondo */
-            text-align: center; /* Alineación del texto */
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Estilos del encabezado */
-        header {
-            background-color: #a1d699; /* Color de fondo */
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between; /* Espaciado entre elementos */
-            align-items: center;
-        }
-        
-        /* Contenedor del encabezado para organizar el texto y el botón */
-        .header-container {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        
-        /* Estilos del botón de iniciar sesión */
-        button {
-            background-color: white;
-            border: 2px solid #a1d699;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer; /* Hace que el cursor cambie a un puntero */
-            border-radius: 5px; /* Bordes redondeados */
-        }
-        
-        /* Estilos del contenedor principal */
-        main {
-            padding: 20px;
-        }
-        
-        /* Estilos de las secciones */
-        .section {
-            background-color: white;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%; /* Ancho del contenedor */
-            max-width: 600px; /* Máximo ancho */
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-        }
-        
-        /* Estilos de los títulos */
-        h2 {
-            font-size: 20px;
-            font-weight: normal;
-            margin: 10px 0;
-        }
-        
-        /* Contenedor del mapa */
-        .map-container {
-            text-align: center;
-            margin: 20px auto;
-        }
-        
-        /* Estilos del iframe (mapa) */
-        iframe {
-            width: 80%;
-            height: 300px;
-            border: none;
-            border-radius: 10px; /* Bordes redondeados */
-        }
-        
-        /* Estilos de la sección de preguntas frecuentes */
-        .faq {
-            background-color: #a1d699;
-            margin: 20px auto;
-            padding: 15px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            cursor: pointer; /* Indica que es interactivo */
-        }
-        
-        /* Estilos del pie de página */
-        footer {
-            background-color: #e08a1e;
-            padding: 20px;
-            color: white;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Encabezado principal -->
-    <header>
-        <div class="header-container">
-            <span>Reseñas para la Peña</span>
-            <button>Iniciar sesión</button>
-        </div>
-    </header>
-    
-    <main>
-        <!-- Sección de opciones principales -->
-        <section class="section">
-            <h2>Busca una opinión</h2>
-            <h2>Escribe una opinión</h2>
-            <h2>Busca una inmobiliaria</h2>
-        </section>
-        
-        <!-- Sección de reseñas recientes -->
-        <section class="section">
-            <h2>Mira las últimas reseñas</h2>
-        </section>
-        
-        <!-- Sección del mapa con Google Maps -->
-        <section class="map-container">
-            <h2>O mira nuestro mapa</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31206.68472726494!2d-8.545824155419947!3d42.88044705964202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e4f5864535a9b%3A0x24a39868f3e7e5d8!2sSantiago%20de%20Compostela!5e0!3m2!1ses!2ses!4v1649747080585!5m2!1ses!2ses" allowfullscreen></iframe>
-        </section>
-        
-        <!-- Sección de preguntas frecuentes -->
-        <section class="section">
-            <h2>Preguntas frecuentes</h2>
-            <div class="faq">¿Qué es reseñasparalapeña?</div>
-            <div class="faq">¿Por qué dejar una opinión?</div>
-            <div class="faq">¿Son anónimas mis opiniones?</div>
-            <div class="faq">¿Mi casero verá mi review?</div>
-        </section>
-    </main>
-    
-    <!-- Pie de página con enlaces de interés -->
-    <footer>
-        <p>Sobre nosotros | Cookies | Contacto | Empresa | Recursos | Consejos</p>
-        <p>Política de privacidad | Términos y condiciones | Buenas prácticas | Redes sociales | Socios</p>
-    </footer>
-</body>
-</html>
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9a8f0; /* Color de fondo */
+    text-align: center; /* Alineación del texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #a1d699; /* Color de fondo */
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center;
+}
+
+/* Contenedor del encabezado para organizar el texto y el botón */
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Estilos del botón de iniciar sesión */
+button {
+    background-color: white;
+    border: 2px solid #a1d699;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Hace que el cursor cambie a un puntero */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos del contenedor principal */
+main {
+    padding: 20px;
+}
+
+/* Estilos de las secciones */
+.section {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Ancho del contenedor */
+    max-width: 600px; /* Máximo ancho */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos de los títulos */
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+/* Contenedor del mapa */
+.map-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Estilos del iframe (mapa) */
+iframe {
+    width: 80%;
+    height: 300px;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos de la sección de preguntas frecuentes */
+.faq {
+    background-color: #a1d699;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    cursor: pointer; /* Indica que es interactivo */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #e08a1e;
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+}
