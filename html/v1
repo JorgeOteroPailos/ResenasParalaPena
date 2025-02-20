@@ -4,6 +4,7 @@
     <!-- Definición de la codificación de caracteres y la configuración de la vista en dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/v1.css">
     <title>reseñasparalapeña</title>
 </head>
 <body>
