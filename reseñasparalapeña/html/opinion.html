@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escribir Opinión</title>
+  <link rel="stylesheet" href="v2.css">
+  <style>
+    /* Aseguramos el uso de la misma fuente y estilos que en login.html */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Ocultamos la sección de opinión hasta la verificación exitosa */
+    #opinion-container {
+      display: none;
+    }
+    /* Estilo para mostrar la dirección verificada */
+    .verified-direction {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <span>Reseñas para la Peña</span>
+      <div>
+        <a href="v2.html" class="btn">
+          <span class="icon">🏠</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <!-- Sección para verificación de dirección -->
+      <div id="direccion-verificacion">
+        <label for="direccion">Dirección:</label>
+        <!-- Se usa la clase .input-box para igualar el formato de login.html -->
+        <input type="text" id="direccion" class="input-box" placeholder="Ej: Rúa do Franco 1, 1A">
+        <button id="verificar" class="btn">Verificar Dirección</button>
+        <p id="mensaje-error" class="error-message"></p>
+        <p style="font-size: 14px; margin-top: 5px;">
+          Formato: <strong>Nombre de calle número de portal, adicional</strong><br>
+          donde <em>adicional</em> es un número del 1 al 10, opcionalmente seguido de una letra.
+        </p>
+      </div>
+      
+      <!-- Sección del formulario de opinión (oculta hasta la verificación) -->
+      <div id="opinion-container">
+        <div class="verified-direction" id="direccion-verificada"></div>
+        <label for="opinion">Tu Opinión:</label>
+        <textarea id="opinion" class="input-box" placeholder="Escribe tu opinión aquí..." rows="10" style="width: 100%;"></textarea>
+        <button id="publicar" class="btn">Publicar Opinión</button>
+        <p id="mensaje-publicacion" class="error-message"></p>
+      </div>
+      
+      <!-- Enlace para descargar las opiniones guardadas -->
+      <div id="descargar-container" style="display: none; margin-top: 20px;">
+        <a id="descargar-opiniones" class="btn" download="opiniones.txt" href="#">Descargar Opiniones</a>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // En lugar de usar fetch, incluimos el contenido de direcciones.txt aquí
+      const direccionesData = `Rúa do Franco 1
+Otra Calle 45
+Ejemplo Calle 10`; // <-- Copia aquí el contenido de direcciones.txt
+
+      // Procesamos el contenido en un array
+      const direccionesArray = direccionesData.split('\n').map(linea => linea.trim()).filter(Boolean);
+      
+      const btnVerificar = document.getElementById('verificar');
+      const inputDireccion = document.getElementById('direccion');
+      const mensajeError = document.getElementById('mensaje-error');
+      const contenedorVerificacion = document.getElementById('direccion-verificacion');
+      const contenedorOpinion = document.getElementById('opinion-container');
+      const direccionVerificadaElem = document.getElementById('direccion-verificada');
+      const btnPublicar = document.getElementById('publicar');
+      const mensajePublicacion = document.getElementById('mensaje-publicacion');
+      const descargarContainer = document.getElementById('descargar-container');
+      const enlaceDescarga = document.getElementById('descargar-opiniones');
+      
+      // Función para verificar la dirección
+      btnVerificar.addEventListener('click', function() {
+        const direccionCompleta = inputDireccion.value.trim();
+        if (direccionCompleta === '') {
+          mensajeError.textContent = 'Por favor, ingresa una dirección válida.';
+          mensajeError.style.color = 'red';
+          return;
+        }
+        
+        // Se espera el formato: "Nombre de calle número de portal, adicional"
+        const partes = direccionCompleta.split(',');
+        if (partes.length !== 2) {
+          mensajeError.textContent = 'El formato debe ser: "Nombre de calle número de portal, adicional".';
+          mensajeError.style.color = 'red';
+          return;
+        }
+        
+        const baseDireccion = partes[0].trim(); // Ej: "Rúa do Franco 1"
+        const adicional = partes[1].trim();      // Ej: "1A"
+        
+        // Validar que 'adicional' sea un número entre 1 y 10, opcionalmente seguido de una letra
+        const regexAdicional = /^(?:[1-9]|10)(?:[A-Za-z])?$/;
+        if (!regexAdicional.test(adicional)) {
+          mensajeError.textContent = 'La segunda parte debe ser un número del 1 al 10, opcionalmente seguido de una letra.';
+          mensajeError.style.color = 'red';
+          return;
+        }
+        
+        // Validar que la base de la dirección esté en direccionesArray
+        if (direccionesArray.includes(baseDireccion)) {
+          mensajeError.textContent = '';
+          contenedorVerificacion.style.display = 'none';
+          contenedorOpinion.style.display = 'block';
+          direccionVerificadaElem.textContent = 'Dirección verificada: ' + direccionCompleta;
+        } else {
+          mensajeError.textContent = '❌ La dirección base no existe en la base de datos.';
+          mensajeError.style.color = 'red';
+        }
+      });
+      
+      // Función para publicar la opinión
+      btnPublicar.addEventListener('click', function() {
+        const opinionTexto = document.getElementById('opinion').value.trim();
+        if (opinionTexto === '') {
+          mensajePublicacion.textContent = 'Por favor, escribe tu opinión.';
+          mensajePublicacion.style.color = 'red';
+          return;
+        }
+        const direccionVerificada = direccionVerificadaElem.textContent.replace('Dirección verificada: ', '');
+        let opiniones = JSON.parse(localStorage.getItem('opiniones')) || [];
+        opiniones.push({ direccion: direccionVerificada, opinion: opinionTexto });
+        localStorage.setItem('opiniones', JSON.stringify(opiniones));
+        
+        mensajePublicacion.textContent = 'Opinión publicada exitosamente.';
+        mensajePublicacion.style.color = 'green';
+        document.getElementById('opinion').value = '';
+        generarEnlaceDescarga(opiniones);
+      });
+      
+      // Función para generar un enlace de descarga con las opiniones guardadas
+      function generarEnlaceDescarga(opiniones) {
+        let contenido = '';
+        opiniones.forEach((item, index) => {
+          contenido += `Opinión ${index + 1}:\nDirección: ${item.direccion}\nOpinión: ${item.opinion}\n\n`;
+        });
+        const blob = new Blob([contenido], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        enlaceDescarga.href = url;
+        descargarContainer.style.display = 'block';
+      }
+      
+      // Si ya hay opiniones guardadas, generamos el enlace de descarga al cargar la página
+      const opinionesGuardadas = JSON.parse(localStorage.getItem('opiniones'));
+      if(opinionesGuardadas && opinionesGuardadas.length > 0) {
+        generarEnlaceDescarga(opinionesGuardadas);
+      }
+    });
+  </script>
+</body>
+</html>
