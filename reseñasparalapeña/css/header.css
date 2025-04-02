@@ -1,0 +1,27 @@
+header {
+  background: linear-gradient(135deg, #a1d699 0%, #d9a8f0 100%);
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#casita {
+    text-decoration: none;
+  }
+
+#casita:hover {
+text-decoration: none;
+}
+
+
+  

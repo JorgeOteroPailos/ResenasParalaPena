@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
           <!-- Botones alineados a la derecha -->
           <div class="header-buttons">
-            <a href="v2.html" class="btn">
-              <span class="icon">🏠</span>
+            <a href="v2.html" id="casita">
+              <span>🏠</span>
             </a>
             <button onclick="window.location.href='login.html'">Iniciar sesión</button>
           </div>

@@ -9,6 +9,10 @@
     flex-direction: column;
     gap: 12px;
   }
+
+  .texto-estandar {
+    font-family: Arial, sans-serif;
+  }
   
   .lista-contacto li {
     display: flex;
