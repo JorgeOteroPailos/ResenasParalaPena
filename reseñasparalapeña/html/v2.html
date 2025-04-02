@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/v2.css">
+  <title>reseñasparalapeña</title>
+  <script defer src="../js/validaciones.js"></script>
+  
+  <script defer src="../js/footer.js"></script>
+  
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <span>Reseñas para la Peña</span>
+      <button onclick="window.location.href='login.html'">Iniciar sesión</button>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Sección de opciones principales -->
+    <section class="section">
+      <h2>Busca una opinión</h2>
+      <a href="opinion.html" class="boton-opinion">Escribe una opinión</a>
+      <h2>Busca una inmobiliaria</h2>
+    </section>
+    
+    <!-- Sección de últimas reseñas con carrusel CSS -->
+    <section class="section carousel-reviews">
+      <h2>Mira las últimas reseñas</h2>
+      <!-- Inputs para controlar el carrusel de reseñas -->
+      <input type="radio" name="carouselReviews" id="reviewSlide1" checked>
+      <input type="radio" name="carouselReviews" id="reviewSlide2">
+      <input type="radio" name="carouselReviews" id="reviewSlide3">
+      
+      <div class="reviews-container">
+        <div class="reviews-wrapper">
+          <div class="review">Dirección<br>Reseña 1</div>
+          <div class="review">Dirección<br>Reseña 2</div>
+          <div class="review">Dirección<br>Reseña 3</div>
+          <div class="review">Dirección<br>Reseña 4</div>
+          <div class="review">Dirección<br>Reseña 5</div>
+        </div>
+      </div>
+      <div class="reviews-navigation">
+        <!-- Flechas: para el primer slide solo se muestra "siguiente" -->
+        <label for="reviewSlide2" class="nav-arrow arrow-reviews-1">&#8594;</label>
+        <!-- Para el segundo slide se muestran ambas -->
+        <label for="reviewSlide1" class="nav-arrow arrow-reviews-2">&#8592;</label>
+        <label for="reviewSlide3" class="nav-arrow arrow-reviews-2">&#8594;</label>
+        <!-- Para el tercer slide, solo se muestra "anterior" -->
+        <label for="reviewSlide2" class="nav-arrow arrow-reviews-3">&#8592;</label>
+      </div>
+      <a href="todas-las-resenas.html" class="view-all">Ver Todas</a>
+    </section>
+    
+    <!-- Sección del mapa -->
+    <section class="map-container">
+      <h2>O mira nuestro mapa</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31206.68472726494!2d-8.545824155419947!3d42.88044705964202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e4f5864535a9b%3A0x24a39868f3e7e5d8!2sSantiago%20de%20Compostela!5e0!3m2!1ses!2ses!4v1649747080585!5m2!1ses!2ses" allowfullscreen></iframe>
+    </section>
+    
+    <!-- Sección de consejos con carrusel CSS -->
+    <section class="section carousel-tips">
+      <h2>Consejos</h2>
+      <!-- Inputs para controlar el carrusel de consejos -->
+      <input type="radio" name="carouselTips" id="tipSlide1" checked>
+      <input type="radio" name="carouselTips" id="tipSlide2">
+      <input type="radio" name="carouselTips" id="tipSlide3">
+      
+      <div class="tips-container">
+        <div class="tips-wrapper">
+          <div class="tip">Consejo 1: ¡Mantén la calma!</div>
+          <div class="tip">Consejo 2: Organiza tus ideas.</div>
+          <div class="tip">Consejo 3: Sé puntual.</div>
+          <div class="tip">Consejo 4: Comunica con claridad.</div>
+          <div class="tip">Consejo 5: Aprende de los errores.</div>
+        </div>
+      </div>
+      <div class="tips-navigation">
+        <!-- Flechas para el carrusel de consejos -->
+        <label for="tipSlide2" class="nav-arrow arrow-tips-1">&#8594;</label>
+        <label for="tipSlide1" class="nav-arrow arrow-tips-2">&#8592;</label>
+        <label for="tipSlide3" class="nav-arrow arrow-tips-2">&#8594;</label>
+        <label for="tipSlide2" class="nav-arrow arrow-tips-3">&#8592;</label>
+      </div>
+      <a href="consejos.html" class="view-all">Ver Todos</a>
+    </section>
+    
+    <!-- Sección de preguntas frecuentes -->
+        <section class="section">
+            <h2>Preguntas frecuentes</h2>
+            <details class="desplegable">
+                <summary>¿Qué es reseñasparalapeña?</summary>
+                <p>Reseñasparalapeña es una plataforma donde los usuarios pueden compartir opiniones y experiencias sobre inmobiliarias y viviendas para ayudar a otros a tomar decisiones informadas.</p>
+            </details>
+            <details class="desplegable">
+                <summary>¿Por qué dejar una opinión?</summary>
+                <p>Dejar una opinión permite a otros usuarios conocer la calidad de una vivienda o inmobiliaria antes de alquilar o comprar, promoviendo transparencia y mejores experiencias.</p>
+            </details>
+            <details class="desplegable">
+                <summary>¿Son anónimas mis opiniones?</summary>
+                <p>Sí, las opiniones pueden ser anónimas si así lo deseas. No recopilamos datos personales sin tu consentimiento.</p>
+            </details>
+            <details class="desplegable">
+                <summary>¿Mi casero verá mi review?</summary>
+                <p>Las reseñas son públicas, por lo que cualquier persona, incluido tu casero, podría leerlas. Sin embargo, puedes escribir tu opinión de manera objetiva y sin incluir información personal.</p>
+            </details>
+        </section>
+  
+        <footer>
+          <!-- <p>Sobre nosotros | Cookies | Contacto | Empresa | Recursos | Consejos</p> -->
+          <!-- <p>Política de privacidad | Términos y condiciones | Buenas prácticas | Redes sociales | Socios</p> -->
+          
+        </footer>
+        
+        
+  
+</body>
+</html>
