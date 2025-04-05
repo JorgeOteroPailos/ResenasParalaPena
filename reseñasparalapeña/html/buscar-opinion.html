@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca una opinión - Reseñas para la Peña</title>
+  <link rel="stylesheet" href="../css/buscar-opinion.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  
+  <script defer src="../js/buscar-opinion.js"></script>
+</head>
+<body>
+  
+
+  <div class="main-section" id="main-section">
+    <video autoplay muted loop id="background-video">
+      <source src="../audiovisuales/buscar-opinion/streets-video.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+    <div class="container">
+      <div class="search-bar">
+        <button id="home-button"><i class="fas fa-house"></i></button>
+        <input type="text" id="search-input" placeholder="Busca una dirección...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-section" id="results-section">
+    <div class="results" id="results-container"></div>
+  </div>
+
+  <div class="modal" id="opinion-modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">×</span>
+      <h3 id="modal-address"></h3>
+      <p id="modal-opinion"></p>
+      <p class="modal-user" id="modal-user"></p>
+    </div>
+  </div>
+
+  
+  <script>
+    if (!localStorage.getItem('loggedInUser')) {
+      window.location.href = '../html/login.html';
+    }
+  </script>
+</body>
+</html>

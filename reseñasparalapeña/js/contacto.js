@@ -1,18 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("form-contacto");
+  const submitButton = formulario.querySelector("button[type='submit']");
 
+  // Evento 1: Submit del formulario
   formulario.addEventListener("submit", (e) => {
-    e.preventDefault(); // Evita que se recargue la página
+    e.preventDefault();
+    showMessage();
+  });
 
-    // Obtener los valores (si los necesitas en el futuro)
+  // Evento 2: Mouseover en el botón de enviar
+  submitButton.addEventListener("mouseover", () => {
+    submitButton.style.backgroundColor = "#8cc084"; // Cambio de color al pasar el ratón
+  });
+
+  // Evento 3: Mouseout en el botón de enviar
+  submitButton.addEventListener("mouseout", () => {
+    submitButton.style.backgroundColor = "white"; // Vuelve al color original
+  });
+
+  function showMessage() {
     const inputs = formulario.querySelectorAll("input, textarea");
-    const datos = {};
-    inputs.forEach((el) => {
-      datos[el.placeholder] = el.value;
-      el.value = ""; // Limpiar el campo
-    });
+    inputs.forEach((el) => (el.value = ""));
 
-    // Crear mensaje flotante
     const mensaje = document.createElement("div");
     mensaje.textContent = "¡Mensaje enviado con éxito!";
     mensaje.style.position = "fixed";
@@ -33,6 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       mensaje.style.opacity = "0";
       setTimeout(() => mensaje.remove(), 500);
-    }, 3000); // Desaparece tras 3 segundos
-  });
+    }, 3000);
+  }
 });

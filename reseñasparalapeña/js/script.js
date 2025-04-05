@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const direccionIngresada = direccionInput.value.trim();
         
         // Verificamos si la dirección ingresada está en el archivo "direcciones.txt"
-        fetch("direcciones.txt")
+        fetch("../datos/direcciones.txt")
             .then(response => response.text())
             .then(data => {
                 const direcciones = data.split("\n").map(linea => linea.trim());

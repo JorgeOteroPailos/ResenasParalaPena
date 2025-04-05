@@ -16,13 +16,14 @@ header {
   padding: 0 20px;
 }
 
-#casita {
-    text-decoration: none;
-  }
-
-#casita:hover {
-text-decoration: none;
+.logo-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
 }
+
+
 
 
   

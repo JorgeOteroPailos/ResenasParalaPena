@@ -3,77 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escribir Opinión</title>
-  <link rel="stylesheet" href="v2.css">
-  <style>
-    /* Aseguramos el uso de la misma fuente y estilos que en login.html */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    /* Ocultamos la sección de opinión hasta la verificación exitosa */
-    #opinion-container {
-      display: none;
-    }
-    /* Estilo para mostrar la dirección verificada */
-    .verified-direction {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  </style>
+  <title>Escribir Opinión - Reseñas para la Peña</title>
+  <link rel="stylesheet" href="../css/opinion.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- <script defer src="../js/auth.js"></script> -->
+
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <span>Reseñas para la Peña</span>
-      <div>
-        <a href="v2.html" class="btn">
-          <span class="icon">🏠</span>
-        </a>
+  <div class="main-section" id="main-section">
+    <video autoplay muted loop id="background-video">
+      <source src="../audiovisuales/opinion/escribir.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+    <div class="container">
+      <div class="header-container">
+        <div id="header-buttons"></div>
       </div>
+      <div class="verification-bar" id="direccion-verificacion">
+        <button id="home-button"><i class="fas fa-house"></i></button>
+        <input type="text" id="direccion" placeholder="Ej: Rúa do Franco 1, 1A">
+        <button id="verificar"><i class="fas fa-search"></i></button>
+      </div>
+      <p id="mensaje-error"></p>
     </div>
-  </header>
-  
+  </div>
+
+  <div id="opinion-container">
+    <div class="verified-direction" id="direccion-verificada"></div>
+    <label for="opinion">Tu Opinión:</label>
+    <textarea id="opinion" class="input-box" placeholder="Escribe tu opinión aquí..." rows="10"></textarea>
+    <button id="publicar">Publicar Opinión</button>
+    <p id="mensaje-publicacion"></p>
+  </div>
+
   <main>
     <div class="container">
-      <!-- Sección para verificación de dirección -->
-      <div id="direccion-verificacion">
-        <label for="direccion">Dirección:</label>
-        <!-- Se usa la clase .input-box para igualar el formato de login.html -->
-        <input type="text" id="direccion" class="input-box" placeholder="Ej: Rúa do Franco 1, 1A">
-        <button id="verificar" class="btn">Verificar Dirección</button>
-        <p id="mensaje-error" class="error-message"></p>
-        <p style="font-size: 14px; margin-top: 5px;">
-          Formato: <strong>Nombre de calle número de portal, adicional</strong><br>
-          donde <em>adicional</em> es un número del 1 al 10, opcionalmente seguido de una letra.
-        </p>
-      </div>
-      
-      <!-- Sección del formulario de opinión (oculta hasta la verificación) -->
-      <div id="opinion-container">
-        <div class="verified-direction" id="direccion-verificada"></div>
-        <label for="opinion">Tu Opinión:</label>
-        <textarea id="opinion" class="input-box" placeholder="Escribe tu opinión aquí..." rows="10" style="width: 100%;"></textarea>
-        <button id="publicar" class="btn">Publicar Opinión</button>
-        <p id="mensaje-publicacion" class="error-message"></p>
-      </div>
-      
-      <!-- Enlace para descargar las opiniones guardadas -->
-      <div id="descargar-container" style="display: none; margin-top: 20px;">
-        <a id="descargar-opiniones" class="btn" download="opiniones.txt" href="#">Descargar Opiniones</a>
-      </div>
     </div>
   </main>
+
+  <script>
+    let direccionesArray = [];
+
+async function cargarDirecciones() {
+  try {
+    const response = await fetch('../datos/direcciones.xml');
+    const xmlString = await response.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(xmlString, 'application/xml');
+    const direccionElements = xml.getElementsByTagName('direccion');
+    direccionesArray = Array.from(direccionElements).map(el => el.textContent.trim());
+    console.log("Direcciones cargadas:", direccionesArray);
+  } catch (error) {
+    console.error('Error cargando el archivo XML:', error);
+  }
+}
+
+// Llama a la función nada más cargar la página
+window.addEventListener('DOMContentLoaded', cargarDirecciones);
+  </script>
   
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // En lugar de usar fetch, incluimos el contenido de direcciones.txt aquí
-      const direccionesData = `Rúa do Franco 1
-Otra Calle 45
-Ejemplo Calle 10`; // <-- Copia aquí el contenido de direcciones.txt
+    if (!localStorage.getItem('loggedInUser')) {
+      window.location.href = '../html/login.html';
+    }
 
-      // Procesamos el contenido en un array
-      const direccionesArray = direccionesData.split('\n').map(linea => linea.trim()).filter(Boolean);
-      
+    document.addEventListener('DOMContentLoaded', function() {
+      const homeButton = document.getElementById('home-button');
       const btnVerificar = document.getElementById('verificar');
       const inputDireccion = document.getElementById('direccion');
       const mensajeError = document.getElementById('mensaje-error');
@@ -82,38 +79,39 @@ Ejemplo Calle 10`; // <-- Copia aquí el contenido de direcciones.txt
       const direccionVerificadaElem = document.getElementById('direccion-verificada');
       const btnPublicar = document.getElementById('publicar');
       const mensajePublicacion = document.getElementById('mensaje-publicacion');
-      const descargarContainer = document.getElementById('descargar-container');
-      const enlaceDescarga = document.getElementById('descargar-opiniones');
-      
-      // Función para verificar la dirección
+
+      if (!contenedorVerificacion || !contenedorOpinion || !direccionVerificadaElem) {
+        console.error('Error: Uno o más elementos no se encontraron en el DOM');
+        return;
+      }
+
+      homeButton.addEventListener('click', function() {
+        window.location.href = '../html/index.html';
+      });
+
+    
+
       btnVerificar.addEventListener('click', function() {
         const direccionCompleta = inputDireccion.value.trim();
         if (direccionCompleta === '') {
           mensajeError.textContent = 'Por favor, ingresa una dirección válida.';
-          mensajeError.style.color = 'red';
           return;
         }
-        
-        // Se espera el formato: "Nombre de calle número de portal, adicional"
+
         const partes = direccionCompleta.split(',');
         if (partes.length !== 2) {
           mensajeError.textContent = 'El formato debe ser: "Nombre de calle número de portal, adicional".';
-          mensajeError.style.color = 'red';
           return;
         }
-        
-        const baseDireccion = partes[0].trim(); // Ej: "Rúa do Franco 1"
-        const adicional = partes[1].trim();      // Ej: "1A"
-        
-        // Validar que 'adicional' sea un número entre 1 y 10, opcionalmente seguido de una letra
+
+        const baseDireccion = partes[0].trim();
+        const adicional = partes[1].trim();
         const regexAdicional = /^(?:[1-9]|10)(?:[A-Za-z])?$/;
         if (!regexAdicional.test(adicional)) {
           mensajeError.textContent = 'La segunda parte debe ser un número del 1 al 10, opcionalmente seguido de una letra.';
-          mensajeError.style.color = 'red';
           return;
         }
-        
-        // Validar que la base de la dirección esté en direccionesArray
+
         if (direccionesArray.includes(baseDireccion)) {
           mensajeError.textContent = '';
           contenedorVerificacion.style.display = 'none';
@@ -121,46 +119,26 @@ Ejemplo Calle 10`; // <-- Copia aquí el contenido de direcciones.txt
           direccionVerificadaElem.textContent = 'Dirección verificada: ' + direccionCompleta;
         } else {
           mensajeError.textContent = '❌ La dirección base no existe en la base de datos.';
-          mensajeError.style.color = 'red';
         }
       });
-      
-      // Función para publicar la opinión
+
       btnPublicar.addEventListener('click', function() {
         const opinionTexto = document.getElementById('opinion').value.trim();
         if (opinionTexto === '') {
           mensajePublicacion.textContent = 'Por favor, escribe tu opinión.';
-          mensajePublicacion.style.color = 'red';
           return;
         }
         const direccionVerificada = direccionVerificadaElem.textContent.replace('Dirección verificada: ', '');
         let opiniones = JSON.parse(localStorage.getItem('opiniones')) || [];
         opiniones.push({ direccion: direccionVerificada, opinion: opinionTexto });
         localStorage.setItem('opiniones', JSON.stringify(opiniones));
-        
+
         mensajePublicacion.textContent = 'Opinión publicada exitosamente.';
         mensajePublicacion.style.color = 'green';
         document.getElementById('opinion').value = '';
-        generarEnlaceDescarga(opiniones);
+        contenedorOpinion.style.display = 'none';
+        contenedorVerificacion.style.display = 'flex';
       });
-      
-      // Función para generar un enlace de descarga con las opiniones guardadas
-      function generarEnlaceDescarga(opiniones) {
-        let contenido = '';
-        opiniones.forEach((item, index) => {
-          contenido += `Opinión ${index + 1}:\nDirección: ${item.direccion}\nOpinión: ${item.opinion}\n\n`;
-        });
-        const blob = new Blob([contenido], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        enlaceDescarga.href = url;
-        descargarContainer.style.display = 'block';
-      }
-      
-      // Si ya hay opiniones guardadas, generamos el enlace de descarga al cargar la página
-      const opinionesGuardadas = JSON.parse(localStorage.getItem('opiniones'));
-      if(opinionesGuardadas && opinionesGuardadas.length > 0) {
-        generarEnlaceDescarga(opinionesGuardadas);
-      }
     });
   </script>
 </body>

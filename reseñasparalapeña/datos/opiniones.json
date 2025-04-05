@@ -1,0 +1,228 @@
+[
+    {
+    "user": "cachonda_69",
+    "address": "Rúa do Pombal 36",
+    "opinion": "La mejor boloñesa que tomé en mi vida, además el anfritrión es genial. Me encanta su bici además."
+    },
+    {
+      "user": "maria_gonzalez",
+      "address": "Calle Mayor 123",
+      "opinion": "Mi experiencia fue regular. La casa tiene una ubicación excelente, muy cerca del centro y con acceso a transporte público, pero el estado general deja mucho que desear. Las paredes tienen grietas, el suelo cruje al caminar, y la cocina necesita una reforma urgente. El casero es amable, pero no muy resolutivo con los problemas que surgen."
+    },
+    {
+      "user": "laura_martinez",
+      "address": "Plaza de la Luna 12",
+      "opinion": "Un lugar fantástico para vivir. El piso está recién reformado, con suelos de parquet, una cocina moderna y un baño espectacular con ducha de hidromasaje. La zona es tranquila, ideal para familias, y hay un parque justo al lado donde los niños pueden jugar. Además, los vecinos son muy amables y siempre están dispuestos a ayudar. Lo recomiendo al 100%."
+    },
+    {
+      "user": "carlos_fernandez",
+      "address": "Calle Mayor 123",
+      "opinion": "No está mal, pero podría mejorar. La casa tiene un diseño bonito y está bien distribuida, con habitaciones amplias y un salón muy acogedor. Sin embargo, el aislamiento acústico es pésimo, se escucha todo lo que pasa en la calle y en los pisos vecinos. También he tenido problemas con la conexión a internet, que es bastante inestable. El casero responde, pero a veces tarda demasiado."
+    },
+    {
+      "user": "ana_perez",
+      "address": "Avenida del Sol 45",
+      "opinion": "Me encantó este piso. Es muy espacioso y tiene una terraza enorme donde se puede disfrutar de las tardes de verano. La luz natural es increíble, especialmente en el salón, que tiene vistas a un parque. La cocina está totalmente equipada, y los electrodomésticos son de alta calidad. El único problema es que el edificio no tiene ascensor, lo que puede ser un inconveniente si tienes que subir muchas escaleras."
+    },
+    {
+      "user": "pablo_sanchez",
+      "address": "Calle del Río 78",
+      "opinion": "Una experiencia horrible. El piso estaba sucio cuando llegué, con manchas en las paredes y el suelo pegajoso. El casero prometió arreglarlo, pero nunca lo hizo. Además, hay un problema con las tuberías que hace que el agua salga con muy poca presión, y ducharse es un suplicio. No volvería a alquilar aquí ni lo recomendaría a nadie."
+    },
+    {
+      "user": "sofia_rodriguez",
+      "address": "Calle Mayor 123",
+      "opinion": "La casa es aceptable, pero tiene algunos problemas. La calefacción no funciona bien en invierno, y las facturas de electricidad son altísimas porque los radiadores consumen mucho. El salón es amplio y está bien decorado, pero el baño tiene moho en las juntas de los azulejos, y el casero no parece muy interesado en solucionarlo. La ubicación es lo mejor, muy céntrica."
+    },
+    {
+      "user": "miguel_hernandez",
+      "address": "Avenida del Sol 45",
+      "opinion": "Un piso muy bonito y bien cuidado. Las habitaciones son grandes, y el salón tiene una chimenea que le da un toque muy acogedor. La cocina está reformada y tiene mucho espacio de almacenamiento. La zona es tranquila, con supermercados y colegios cerca, lo que lo hace ideal para familias. El casero es muy atento y siempre responde rápido a cualquier problema."
+    },
+    {
+        "user": "elena_diaz",
+        "address": "Plaza de la Luna 12",
+        "opinion": "No recomiendo este lugar. El piso tiene un olor a humedad que no se va, y las ventanas no cierran bien, lo que hace que entre mucho frío en invierno. Además, el casero es muy difícil de contactar, y cuando lo hace, no soluciona nada. La única ventaja es que la zona es bonita, con muchos restaurantes y tiendas, pero no compensa los problemas del piso."
+    },
+    {
+    "user": "javier_ruiz",
+    "address": "Calle del Río 78",
+    "opinion": "El piso está bien para el precio, pero tiene sus inconvenientes. La cocina es pequeña y no tiene mucho espacio para cocinar, y el baño tiene una ducha que gotea constantemente. Sin embargo, las habitaciones son amplias, y el salón tiene una buena vista al río. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "carmen_vazquez",
+    "address": "Calle Mayor 123",
+    "opinion": "Una experiencia agridulce. La casa tiene un diseño moderno y está bien ubicada, pero hay problemas con el suministro de agua caliente, que a veces se corta sin razón aparente. También he notado que las paredes son muy finas, y se escucha todo lo que hacen los vecinos. El casero es amable, pero no muy eficiente a la hora de resolver problemas."
+    },
+    {
+    "user": "andres_molina",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un lugar perfecto para vivir. El piso tiene todo lo que necesitas: una cocina amplia con electrodomésticos nuevos, un salón luminoso con grandes ventanales, y un baño con bañera y ducha. La terraza es un plus, ideal para tomar el sol o cenar al aire libre. La zona es muy tranquila, con parques y tiendas cerca. El casero es muy profesional y siempre está disponible."
+    },
+    {
+    "user": "lucia_ortiz",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No me gustó este piso. Las fotos del anuncio eran muy engañosas: el piso es mucho más pequeño de lo que parecía, y la iluminación es muy pobre porque las ventanas son pequeñas. Además, hay un problema con las tuberías que hace que huela mal a veces. El casero no responde a las quejas, y la zona, aunque bonita, no compensa los inconvenientes."
+    },
+    {
+    "user": "sergio_garcia",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso decente, pero con algunos fallos. La calefacción funciona bien, pero el aire acondicionado no enfría lo suficiente en verano. Las habitaciones son amplias, y el salón tiene una buena distribución, pero la cocina necesita una reforma porque los armarios están viejos y no cierran bien. La zona es tranquila, y el casero es razonable, aunque a veces tarda en responder."
+    },
+    {
+    "user": "beatriz_iglesias",
+    "address": "Calle Mayor 123",
+    "opinion": "La casa tiene sus pros y sus contras. Por un lado, la ubicación es inmejorable, con tiendas, restaurantes y transporte público a pocos pasos. Por otro lado, el estado del piso deja mucho que desear: hay humedades en el techo, el suelo está desgastado, y la cocina tiene electrodomésticos muy antiguos. El casero es amable, pero no soluciona los problemas rápidamente."
+    },
+    {
+    "user": "raul_castro",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso espectacular. La reforma es reciente, y se nota en cada detalle: suelos de madera, cocina con isla, baños modernos con acabados de alta calidad. El salón tiene una vista increíble al parque, y la terraza es perfecta para relajarse. La zona es ideal para familias, con colegios y supermercados cerca. El casero es muy atento y siempre está dispuesto a ayudar."
+    },
+    {
+    "user": "clara_nunez",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomendaría este piso. El espacio es muy pequeño para el precio que piden, y la iluminación es terrible porque las ventanas dan a un patio interior oscuro. Además, hay un problema con las tuberías que hace que el agua salga con un olor extraño. El casero no responde a las quejas, y la zona, aunque céntrica, es muy ruidosa por las noches."
+    },
+    {
+    "user": "oscar_mendez",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso aceptable, pero con algunos problemas. La cocina es funcional, pero los electrodomésticos son viejos y hacen mucho ruido. El salón es amplio y tiene una buena vista al río, pero las habitaciones son pequeñas y no tienen mucho espacio de almacenamiento. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "irene_silva",
+    "address": "Calle Mayor 123",
+    "opinion": "Mi experiencia fue regular. La casa tiene una buena ubicación, pero el estado general no es el mejor. Las paredes tienen manchas de humedad, el suelo cruje al caminar, y la cocina necesita una reforma urgente. El baño tiene una fuga que lleva meses sin arreglarse, y el casero, aunque amable, no es muy resolutivo. No creo que vuelva a alquilar aquí."
+    },
+    {
+    "user": "diego_alvarez",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso muy bonito y bien cuidado. Las habitaciones son grandes, y el salón tiene una chimenea que le da un toque muy acogedor. La cocina está reformada y tiene mucho espacio de almacenamiento. La zona es tranquila, con supermercados y colegios cerca, lo que lo hace ideal para familias. El casero es muy atento y siempre responde rápido a cualquier problema."
+    },
+    {
+    "user": "patricia_romo",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomiendo este lugar. El piso tiene un olor a humedad que no se va, y las ventanas no cierran bien, lo que hace que entre mucho frío en invierno. Además, el casero es muy difícil de contactar, y cuando lo hace, no soluciona nada. La única ventaja es que la zona es bonita, con muchos restaurantes y tiendas, pero no compensa los problemas del piso."
+    },
+    {
+    "user": "alberto_moreno",
+    "address": "Calle del Río 78",
+    "opinion": "El piso está bien para el precio, pero tiene sus inconvenientes. La cocina es pequeña y no tiene mucho espacio para cocinar, y el baño tiene una ducha que gotea constantemente. Sin embargo, las habitaciones son amplias, y el salón tiene una buena vista al río. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "nuria_esteban",
+    "address": "Calle Mayor 123",
+    "opinion": "Una experiencia agridulce. La casa tiene un diseño moderno y está bien ubicada, pero hay problemas con el suministro de agua caliente, que a veces se corta sin razón aparente. También he notado que las paredes son muy finas, y se escucha todo lo que hacen los vecinos. El casero es amable, pero no muy eficiente a la hora de resolver problemas."
+    },
+    {
+    "user": "victor_cano",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un lugar perfecto para vivir. El piso tiene todo lo que necesitas: una cocina amplia con electrodomésticos nuevos, un salón luminoso con grandes ventanales, y un baño con bañera y ducha. La terraza es un plus, ideal para tomar el sol o cenar al aire libre. La zona es muy tranquila, con parques y tiendas cerca. El casero es muy profesional y siempre está disponible."
+    },
+    {
+    "user": "sara_blanco",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No me gustó este piso. Las fotos del anuncio eran muy engañosas: el piso es mucho más pequeño de lo que parecía, y la iluminación es muy pobre porque las ventanas son pequeñas. Además, hay un problema con las tuberías que hace que huela mal a veces. El casero no responde a las quejas, y la zona, aunque bonita, no compensa los inconvenientes."
+    },
+    {
+    "user": "marcos_vega",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso decente, pero con algunos fallos. La calefacción funciona bien, pero el aire acondicionado no enfría lo suficiente en verano. Las habitaciones son amplias, y el salón tiene una buena distribución, pero la cocina necesita una reforma porque los armarios están viejos y no cierran bien. La zona es tranquila, y el casero es razonable, aunque a veces tarda en responder."
+    },
+    {
+    "user": "eva_rios",
+    "address": "Calle Mayor 123",
+    "opinion": "La casa tiene sus pros y sus contras. Por un lado, la ubicación es inmejorable, con tiendas, restaurantes y transporte público a pocos pasos. Por otro lado, el estado del piso deja mucho que desear: hay humedades en el techo, el suelo está desgastado, y la cocina tiene electrodomésticos muy antiguos. El casero es amable, pero no soluciona los problemas rápidamente."
+    },
+    {
+    "user": "hugo_martin",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso espectacular. La reforma es reciente, y se nota en cada detalle: suelos de madera, cocina con isla, baños modernos con acabados de alta calidad. El salón tiene una vista increíble al parque, y la terraza es perfecta para relajarse. La zona es ideal para familias, con colegios y supermercados cerca. El casero es muy atento y siempre está dispuesto a ayudar."
+    },
+    {
+    "user": "lidia_gomez",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomendaría este piso. El espacio es muy pequeño para el precio que piden, y la iluminación es terrible porque las ventanas dan a un patio interior oscuro. Además, hay un problema con las tuberías que hace que el agua salga con un olor extraño. El casero no responde a las quejas, y la zona, aunque céntrica, es muy ruidosa por las noches."
+    },
+    {
+    "user": "adrian_torres",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso aceptable, pero con algunos problemas. La cocina es funcional, pero los electrodomésticos son viejos y hacen mucho ruido. El salón es amplio y tiene una buena vista al río, pero las habitaciones son pequeñas y no tienen mucho espacio de almacenamiento. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "marta_fernandez",
+    "address": "Calle Mayor 123",
+    "opinion": "Mi experiencia fue regular. La casa tiene una buena ubicación, pero el estado general no es el mejor. Las paredes tienen manchas de humedad, el suelo cruje al caminar, y la cocina necesita una reforma urgente. El baño tiene una fuga que lleva meses sin arreglarse, y el casero, aunque amable, no es muy resolutivo. No creo que vuelva a alquilar aquí."
+    },
+    {
+    "user": "roberto_santos",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso muy bonito y bien cuidado. Las habitaciones son grandes, y el salón tiene una chimenea que le da un toque muy acogedor. La cocina está reformada y tiene mucho espacio de almacenamiento. La zona es tranquila, con supermercados y colegios cerca, lo que lo hace ideal para familias. El casero es muy atento y siempre responde rápido a cualquier problema."
+    },
+    {
+    "user": "isabel_lopez",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomiendo este lugar. El piso tiene un olor a humedad que no se va, y las ventanas no cierran bien, lo que hace que entre mucho frío en invierno. Además, el casero es muy difícil de contactar, y cuando lo hace, no soluciona nada. La única ventaja es que la zona es bonita, con muchos restaurantes y tiendas, pero no compensa los problemas del piso."
+    },
+    {
+    "user": "fernando_gil",
+    "address": "Calle del Río 78",
+    "opinion": "El piso está bien para el precio, pero tiene sus inconvenientes. La cocina es pequeña y no tiene mucho espacio para cocinar, y el baño tiene una ducha que gotea constantemente. Sin embargo, las habitaciones son amplias, y el salón tiene una buena vista al río. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "cristina_mendez",
+    "address": "Calle Mayor 123",
+    "opinion": "Una experiencia agridulce. La casa tiene un diseño moderno y está bien ubicada, pero hay problemas con el suministro de agua caliente, que a veces se corta sin razón aparente. También he notado que las paredes son muy finas, y se escucha todo lo que hacen los vecinos. El casero es amable, pero no muy eficiente a la hora de resolver problemas."
+    },
+    {
+    "user": "juan_carlos",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un lugar perfecto para vivir. El piso tiene todo lo que necesitas: una cocina amplia con electrodomésticos nuevos, un salón luminoso con grandes ventanales, y un baño con bañera y ducha. La terraza es un plus, ideal para tomar el sol o cenar al aire libre. La zona es muy tranquila, con parques y tiendas cerca. El casero es muy profesional y siempre está disponible."
+    },
+    {
+    "user": "lorena_paz",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No me gustó este piso. Las fotos del anuncio eran muy engañosas: el piso es mucho más pequeño de lo que parecía, y la iluminación es muy pobre porque las ventanas son pequeñas. Además, hay un problema con las tuberías que hace que huela mal a veces. El casero no responde a las quejas, y la zona, aunque bonita, no compensa los inconvenientes."
+    },
+    {
+    "user": "eduardo_roman",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso decente, pero con algunos fallos. La calefacción funciona bien, pero el aire acondicionado no enfría lo suficiente en verano. Las habitaciones son amplias, y el salón tiene una buena distribución, pero la cocina necesita una reforma porque los armarios están viejos y no cierran bien. La zona es tranquila, y el casero es razonable, aunque a veces tarda en responder."
+    },
+    {
+    "user": "noelia_cruz",
+    "address": "Calle Mayor 123",
+    "opinion": "La casa tiene sus pros y sus contras. Por un lado, la ubicación es inmejorable, con tiendas, restaurantes y transporte público a pocos pasos. Por otro lado, el estado del piso deja mucho que desear: hay humedades en el techo, el suelo está desgastado, y la cocina tiene electrodomésticos muy antiguos. El casero es amable, pero no soluciona los problemas rápidamente."
+    },
+    {
+    "user": "ivan_moreno",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso espectacular. La reforma es reciente, y se nota en cada detalle: suelos de madera, cocina con isla, baños modernos con acabados de alta calidad. El salón tiene una vista increíble al parque, y la terraza es perfecta para relajarse. La zona es ideal para familias, con colegios y supermercados cerca. El casero es muy atento y siempre está dispuesto a ayudar."
+    },
+    {
+    "user": "alicia_ramos",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomendaría este piso. El espacio es muy pequeño para el precio que piden, y la iluminación es terrible porque las ventanas dan a un patio interior oscuro. Además, hay un problema con las tuberías que hace que el agua salga con un olor extraño. El casero no responde a las quejas, y la zona, aunque céntrica, es muy ruidosa por las noches."
+    },
+    {
+    "user": "ruben_gallego",
+    "address": "Calle del Río 78",
+    "opinion": "Un piso aceptable, pero con algunos problemas. La cocina es funcional, pero los electrodomésticos son viejos y hacen mucho ruido. El salón es amplio y tiene una buena vista al río, pero las habitaciones son pequeñas y no tienen mucho espacio de almacenamiento. La zona es tranquila, aunque está un poco lejos del centro. El casero es razonable, pero no muy proactivo."
+    },
+    {
+    "user": "miriam_soto",
+    "address": "Calle Mayor 123",
+    "opinion": "Mi experiencia fue regular. La casa tiene una buena ubicación, pero el estado general no es el mejor. Las paredes tienen manchas de humedad, el suelo cruje al caminar, y la cocina necesita una reforma urgente. El baño tiene una fuga que lleva meses sin arreglarse, y el casero, aunque amable, no es muy resolutivo. No creo que vuelva a alquilar aquí."
+    },
+    {
+    "user": "gonzalo_pena",
+    "address": "Avenida del Sol 45",
+    "opinion": "Un piso muy bonito y bien cuidado. Las habitaciones son grandes, y el salón tiene una chimenea que le da un toque muy acogedor. La cocina está reformada y tiene mucho espacio de almacenamiento. La zona es tranquila, con supermercados y colegios cerca, lo que lo hace ideal para familias. El casero es muy atento y siempre responde rápido a cualquier problema."
+    },
+    {
+    "user": "veronica_lara",
+    "address": "Plaza de la Luna 12",
+    "opinion": "No recomiendo este lugar. El piso tiene un olor a humedad que no se va, y las ventanas no cierran bien, lo que hace que entre mucho frío en invierno. Además, el casero es muy difícil de contactar, y cuando lo hace, no soluciona nada. La única ventaja es que la zona es bonita, con muchos restaurantes y tiendas, pero no compensa los problemas del piso."
+    }
+  ]
+  
