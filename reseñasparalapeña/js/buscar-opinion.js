@@ -11,15 +11,26 @@ const resultsSection = document.getElementById('results-section');
 // Se ejecuta al cargar la página, para cargar las opiniones desde el archivo JSON
 let opinions = [];
 
-fetch("../datos/opiniones.json")
-  .then((res) => res.json())
-  .then((data) => {
-    opinions = data;
-    console.log("Opiniones cargadas:", opinions);
-    renderOpinions();
-  })
-  .catch((err) => console.error("Error cargando opiniones.json:", err));
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "../datos/opiniones.json", true);
 
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      try {
+        opinions = JSON.parse(xhr.responseText);
+        console.log("Opiniones cargadas:", opinions);
+        renderOpinions();
+      } catch (error) {
+        console.error("Error parseando JSON:", error);
+      }
+    } else {
+      console.error("Error cargando opiniones.json:", xhr.statusText);
+    }
+  }
+};
+
+xhr.send();
 // Ejemplo: mostrar opiniones en el DOM
 
 // Variable para controlar el estado de la búsqueda
